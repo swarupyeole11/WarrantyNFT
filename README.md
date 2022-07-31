@@ -1,4 +1,24 @@
-# NFT Marketplace
+# Team - Reflex-Flipkart-Grid-4.0
+## Topic - Blockchain-based eCommerce warranty system using NFTs
+
+<p align="center">
+  <img src="https://img.shields.io/badge/solidity-lightgrey" />
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  
+</p>
+
+The objective is to replace the physical warranty and have block chain based warranty using NFT which will ensure
+authenticity and security.
+
+- Converting ownership authenticity and product warranty cards into decaying NFTs.
+- For instance, allow brands and retailers to introduce an NFT for each of their products, which allows customers to receive the physical product along with a digital version of it.
+- Customers can then use the digital NFT to verify the authenticity of their product, prove their ownership of their product, and transfer ownership of them upon resale.
+- The brand/retailer should also be able to tie the digital NFT to its warranty program, allowing owners to track repairs and replacements to the original item.
+- Decay the NFT once the warranty is over.
+- Using the Polygon blockchain to deploy our solution.
 
 ## Technology Stack & Tools
 
@@ -29,8 +49,8 @@ $ npx hardhat node
 
 ### 4. Connect development blockchain accounts to Metamask
 - Copy private key of the addresses and import to Metamask
-- Connect your metamask to hardhat blockchain, network 127.0.0.1:8545.
-- If you have not added hardhat to the list of networks on your metamask, open up a browser, click the fox icon, then click the top center dropdown button that lists all the available networks then click add networks. A form should pop up. For the "Network Name" field enter "Hardhat". For the "New RPC URL" field enter "http://127.0.0.1:8545". For the chain ID enter "31337". Then click save.  
+- Connect your metamask to hardhat blockchain.
+- If you have not added hardhat to the list of networks on your metamask, open up a browser, click the fox icon, then click the top center dropdown button that lists all the available networks then click add networks. A form should pop up. For the "Network Name" field enter "Hardhat".Enter "New RPC URL" and chain ID and click save. 
 
 
 ### 5. Migrate Smart Contracts
@@ -41,8 +61,3 @@ $ npx hardhat node
 
 ### 7. Launch Frontend
 `$ npm run start`
-
-License
-----
-MIT
-
