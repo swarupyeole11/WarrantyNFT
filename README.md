@@ -61,3 +61,6 @@ $ npx hardhat node
 
 ### 7. Launch Frontend
 `$ npm run start`
+
+## Stargazers
+[![Stargazers repo roster for @adityagoel28/Team-Reflex-Flipkart-Grid-4.0](https://reporoster.com/stars/adityagoel28/Team-Reflex-Flipkart-Grid-4.0)](https://github.com/adityagoel28/Team-Reflex-Flipkart-Grid-4.0/stargazers)
