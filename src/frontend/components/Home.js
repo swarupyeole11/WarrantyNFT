@@ -60,10 +60,17 @@ const Home = ({ marketplace, nft }) => {
                 <Card>
                   <Card.Img variant="top" src={item.image} />
                   <Card.Body color="secondary">
-                    <Card.Title>{item.name}</Card.Title>
+                    <Card.Title> <h6>Product Name : </h6> {item.name}</Card.Title>
+                    <br/>
                     <Card.Text>
-                      {item.description}
+                      <h6>Product Description : </h6>{item.description}
+                      <br/>
+                      <br/>
+                      <h6>Product ModelNumber : </h6>
                       {item.modelnum}
+                      <br/>
+                      <br/>
+                      <h6>Product WarrantyPeriod : </h6>
                       {item.warranty}
                     </Card.Text>
                   </Card.Body>
