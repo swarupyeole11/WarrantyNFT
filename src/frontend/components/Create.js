@@ -5,6 +5,10 @@ import { create as ipfsHttpClient } from 'ipfs-http-client'
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
 const Create = ({ marketplace, nft }) => {
+ ///
+  const [warranty,setWarranty] = useState(null)
+  const [modelnum, setModelNum] = useState(null)
+///
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(null)
   const [name, setName] = useState('')
@@ -25,7 +29,7 @@ const Create = ({ marketplace, nft }) => {
   const createNFT = async () => {
     if (!image || !price || !name || !description) return
     try{
-      const result = await client.add(JSON.stringify({image, price, name, description}))
+      const result = await client.add(JSON.stringify({image, price, name, description,warranty,modelnum})) /**chaneg here */
       mintThenList(result)
     } catch(error) {
       console.log("ipfs uri upload error: ", error)
@@ -41,7 +45,10 @@ const Create = ({ marketplace, nft }) => {
     await(await nft.setApprovalForAll(marketplace.address, true)).wait()
     // add nft to marketplace
     const listingPrice = ethers.utils.parseEther(price.toString())
-    await(await marketplace.makeItem(nft.address, id, listingPrice)).wait()
+    const warrantyP = ethers.utils.parseEther(warranty.toString())
+    const modelnumP = ethers.utils.parseEther(modelnum.toString())
+    
+    await(await marketplace.makeItem(nft.address, id, listingPrice,/*chage here */warrantyP,modelnumP)).wait()
   }
   return (
     <div className="container-fluid mt-5">
@@ -58,6 +65,8 @@ const Create = ({ marketplace, nft }) => {
               <Form.Control onChange={(e) => setName(e.target.value)} size="lg" required type="text" placeholder="Name" />
               <Form.Control onChange={(e) => setDescription(e.target.value)} size="lg" required as="textarea" placeholder="Description" />
               <Form.Control onChange={(e) => setPrice(e.target.value)} size="lg" required type="number" placeholder="Price in ETH" />
+              <Form.Control onChange={(e) => setWarranty(e.target.value)} size="lg" required type="number" placeholder="Warranty Period (years)" />
+              <Form.Control onChange={(e) => setModelNum(e.target.value)} size="lg" required type="number" placeholder="Model Number" />
               <div className="d-grid px-0">
                 <Button onClick={createNFT} variant="primary" size="lg">
                   Create & List NFT!

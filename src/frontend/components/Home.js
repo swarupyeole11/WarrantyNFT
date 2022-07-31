@@ -26,7 +26,10 @@ const Home = ({ marketplace, nft }) => {
           seller: item.seller,
           name: metadata.name,
           description: metadata.description,
-          image: metadata.image
+          image: metadata.image,
+          /*change Here */
+          warranty: metadata.warranty,
+          modelnum: metadata.modelnum
         })
       }
     }
@@ -60,6 +63,8 @@ const Home = ({ marketplace, nft }) => {
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>
                       {item.description}
+                      {item.modelnum}
+                      {item.warranty}
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>

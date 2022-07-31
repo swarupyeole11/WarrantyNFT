@@ -15,12 +15,16 @@ contract Marketplace is ReentrancyGuard {
     uint public itemCount; 
 
     struct Item {
+
         uint itemId;
         IERC721 nft;
         uint tokenId;
         uint price;
         address payable seller;
         bool sold;
+        /*change here */
+        uint ModelNumber;
+        uint warrantyPeriod;
     }
 
     // itemId -> Item
@@ -48,7 +52,7 @@ contract Marketplace is ReentrancyGuard {
     }
 
     // Make item to offer on the marketplace
-    function makeItem(IERC721 _nft, uint _tokenId, uint _price) external nonReentrant {
+    function makeItem(IERC721 _nft, uint _tokenId, uint _price,/*chagedHere*/uint _warrantyPeriod ,uint _modelNum) external nonReentrant {
         require(_price > 0, "Price must be greater than zero");
         // increment itemCount
         itemCount ++;
@@ -61,7 +65,10 @@ contract Marketplace is ReentrancyGuard {
             _tokenId,
             _price,
             payable(msg.sender),
-            false
+            false,
+            /*cahnge here */
+            _warrantyPeriod,
+            _modelNum
         );
         // emit Offered event
         emit Offered(
