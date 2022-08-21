@@ -38,12 +38,12 @@ authenticity and security.
 
 ### 2. Install Dependencies:
 ```
-$ cd nft_marketplace
+$ cd BlockchainWarranty
 $ npm install
 ```
 ### 3. Boot up local development blockchain
 ```
-$ cd nft_marketplace
+$ cd BlockchainWarranty
 $ npx hardhat node
 ```
 
@@ -56,11 +56,8 @@ $ npx hardhat node
 ### 5. Migrate Smart Contracts
 `npx hardhat run src/backend/scripts/deploy.js --network localhost`
 
-### 6. Run Tests
-`$ npx hardhat test`
-
-### 7. Launch Frontend
-`$ npm run start`
+### 6. To Run Frontend
+`$ npm start`
 
 ## Stargazers
 [![Stargazers repo roster for @adityagoel28/Team-Reflex-Flipkart-Grid-4.0](https://reporoster.com/stars/adityagoel28/Team-Reflex-Flipkart-Grid-4.0)](https://github.com/adityagoel28/Team-Reflex-Flipkart-Grid-4.0/stargazers)
