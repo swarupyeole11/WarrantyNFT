@@ -27,16 +27,20 @@ export default function MyPurchases({ marketplace, nft, account }) {
         itemId: i.itemId,
         name: metadata.name,
         description: metadata.description,
-        image: metadata.image
+        image: metadata.image,
+        warranty : metadata.warranty,
+        modelnum : metadata.modelnum
       }
       return purchasedItem
     }))
     setLoading(false)
     setPurchases(purchases)
   }
+
   useEffect(() => {
     loadPurchasedItems()
   }, [])
+
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Loading...</h2>
@@ -51,7 +55,8 @@ export default function MyPurchases({ marketplace, nft, account }) {
               <Col key={idx} className="overflow-hidden">
                 <Card>
                   <Card.Img variant="top" src={item.image} />
-                  <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
+                  <Card.Footer> Model Num : {item.modelnum}</Card.Footer>
+                  <Card.Footer> Warranty Period : {item.warranty} years</Card.Footer>
                 </Card>
               </Col>
             ))}

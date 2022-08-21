@@ -10,14 +10,14 @@ const Navigation = ({ web3Handler, account }) => {
             <Container>
                 <Navbar.Brand href="https://www.flipkart.com/">
                     <img src={market} width="40" height="40" className="" alt="" />
-                    &nbsp;Flipkart Warranty System
+                    &nbsp;Blockachin MarketPlace and Warranty System
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Flipkart Shopify</Nav.Link>
-                        <Nav.Link as={Link} to="/create">List Product</Nav.Link>
-                        <Nav.Link as={Link} to="/my-listed-items">Product Listed</Nav.Link>
+                        <Nav.Link as={Link} to="/" className=""> Blockchain Shopify</Nav.Link>
+                        <Nav.Link as={Link} to="/create">List Products</Nav.Link>
+                        <Nav.Link as={Link} to="/my-listed-items">Products Listed By Me</Nav.Link>
                         <Nav.Link as={Link} to="/my-purchases">My Product Warranties</Nav.Link>
                     </Nav>
                     <Nav>
