@@ -42,6 +42,7 @@ const Create = ({ marketplace, nft }) => {
       }
     }
   }
+  //this function adds the product meta data to IPFS
   const createNFT = async () => {
     if (!image || !price || !name || !description) return
     try{
@@ -51,6 +52,8 @@ const Create = ({ marketplace, nft }) => {
       console.log("ipfs uri upload error: ", error)
     }
   }
+  
+  //this functions first mints the nft for the product 
   const mintThenList = async (result) => {
     const uri = `https://nftwarranty.infura-ipfs.io/ipfs/${result.path}`
     // mint nft 
