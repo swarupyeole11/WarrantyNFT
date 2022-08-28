@@ -25,7 +25,9 @@ function App() {
   const [marketplace, setMarketplace] = useState({})
   // MetaMask Login/Connect
   const web3Handler = async () => {
+    //It gets all the accouts listed on the metamask 
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    //It sets the cuurentAccount after login to the selected metamask account which is the first accoutnn 
     setAccount(accounts[0])
     // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -42,6 +44,8 @@ function App() {
     })
     loadContracts(signer)
   }
+  
+  //this function loads the contracts fron the backend to the frontend
   const loadContracts = async (signer) => {
     // Get deployed copies of contracts
     const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
