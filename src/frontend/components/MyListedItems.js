@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { ethers } from "ethers"
 import { Row, Col, Card } from 'react-bootstrap'
 
+
 function renderSoldItems(items) {
   return (
     <>
@@ -41,7 +42,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
         const metadata = await response.json()
         // get total price of item (item price + fee)
         const totalPrice = await marketplace.getTotalPrice(i.itemId)
-        // define listed item object
+        // define listed item objects
         let item = {
           totalPrice,
           price: i.price,
