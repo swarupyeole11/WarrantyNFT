@@ -25,6 +25,7 @@ contract Marketplace is ReentrancyGuard {
         /*change here */
         uint ModelNumber;
         uint warrantyPeriod;
+        bool warrantyClaimed;
     }
 
     // itemId -> Item
@@ -68,7 +69,9 @@ contract Marketplace is ReentrancyGuard {
             false,
             /*cahnge here */
             _warrantyPeriod,
-            _modelNum
+            _modelNum,
+            /*change here for warranty claim*/
+            false
         );
         // emit Offered event
         emit Offered(
@@ -106,4 +109,13 @@ contract Marketplace is ReentrancyGuard {
     function getTotalPrice(uint _itemId) view public returns(uint){
         return((items[_itemId].price*(100 + feePercent))/100);
     }
+    
+     /*
+     function claimWarranty(uint _itemId) view public returns(bool){
+            Item storage item = items[_itemId];
+            items.warrantyClaimed=true;
+            return true;
+    }
+    */
+    
 }
