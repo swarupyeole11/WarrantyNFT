@@ -1,4 +1,4 @@
-# Team - Reflex-Flipkart-Grid-4.0
+# Team - Furious
 ## Topic - Blockchain-based eCommerce warranty system using NFTs
 
 <p align="center">
@@ -59,5 +59,4 @@ $ npx hardhat node
 ### 6. To Run Frontend
 `$ npm start`
 
-## Stargazers
-[![Stargazers repo roster for @adityagoel28/Team-Reflex-Flipkart-Grid-4.0](https://reporoster.com/stars/adityagoel28/Team-Reflex-Flipkart-Grid-4.0)](https://github.com/adityagoel28/Team-Reflex-Flipkart-Grid-4.0/stargazers)
+
